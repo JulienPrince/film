@@ -1,0 +1,154 @@
+.header_info {
+  display: flex;
+  justify-content: center;
+}
+.header_info img {
+  object-fit: cover;
+  width: 100%;
+  filter: brightness(35%);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header_info .MuiTypography-h1 {
+  position: absolute;
+  margin-top: 65px;
+  font-size: 70px;
+}
+
+.content_info {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.content_info .MuiTypography-root {
+  font-size: 18px;
+  font-weight: 100;
+  text-align: justify;
+}
+
+.date_info {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.date_info .MuiTypography-h5 {
+  margin-right: 8px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.date_info .MuiTypography-h6 {
+  font-size: 16px;
+  color: #1b8201;
+  font-weight: bold;
+}
+
+.popularity_info {
+  display: flex;
+}
+
+.popularity_info .MuiTypography-h5 {
+  margin-right: 8px;
+  font-size: 17px;
+}
+.popularity_info .MuiTypography-h6 {
+  font-size: 16px;
+  color: #00b3e5;
+  font-weight: bold;
+}
+
+.note_info {
+  display: flex;
+}
+.note_info .MuiTypography-h5 {
+  margin-right: 8px;
+  font-size: 17px;
+}
+
+.note_infos_container {
+  background: #43456f;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note_infos_container .MuiTypography-root {
+  font-weight: bold;
+  font-size: 16px;
+  color: #1b8201;
+}
+
+.font {
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .header_info .MuiTypography-h1 {
+    margin-top: 80px;
+    font-size: 70px;
+  }
+  .header_info img {
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .header_info {
+    margin-top: 140px;
+    justify-content: flex-start;
+  }
+
+  .content_info .MuiTypography-root {
+    font-size: 20px;
+  }
+
+  .header_info .MuiTypography-h1 {
+    position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 45px;
+    font-size: 60px;
+  }
+  .header_info img {
+    width: 350px;
+    height: 400px;
+    filter: brightness(80%);
+    transition: all 0.3s ease-in-out;
+    margin-left: 50px;
+    border-radius: 30px;
+    box-shadow: 5px 2px 20px 10px rgb(122, 122, 122);
+  }
+
+  .font {
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    height: 640px;
+    top: 0;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    z-index: -900;
+    transition: all 0.3s ease-in-out;
+    filter: brightness(90%);
+  }
+  .container {
+    display: flex;
+  }
+
+  .content_info {
+    padding: 20px;
+    margin-top: 238px;
+    margin-left: -118px;
+    width: 700px;
+  }
+
+  .note_infos_container .MuiTypography-root {
+    color: rgb(44, 184, 56);
+  }
+  .note_infos_container {
+    background: #2e3e7e;
+  }
+}

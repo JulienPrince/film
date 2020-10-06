@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Navbar from "./components/header/Navbar";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+import { ContextProvider } from "./ContextProvider";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+
+import Theatres from "./components/inTheatres/Theatres";
+import Popular from "./components/Movies/Popular";
+import MovieInfo from "./components/Movies/movieInfos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ContextProvider>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <React.Fragment>
+            <Navbar />
+            <main>
+              <Switch>
+                <Redirect from="/" to="/acceuil" exact></Redirect>
+                <Route path="/acceuil" component={Popular} />
+                <Route path="/theatres" component={Theatres} />
+                <Route path="/moviInfos" component={MovieInfo} />
+                {/* <Route path="/bestmovies" component={} /> */}
+              </Switch>
+            </main>
+          </React.Fragment>
+        </MuiPickersUtilsProvider>
+      </ContextProvider>
+    </Router>
   );
 }
 

@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  font-weight: 300;
+  transition: 300ms;
+  font-family: "Roboto Mono", monospace;
+}
+.body h1 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-family: "Roboto Mono", monospace;
+}
+.img {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  filter: brightness(35%);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.front_style {
+  display: flex;
+  justify-content: center;
+}
+
+.front_style h1 {
+  transition: 300ms;
+  font-weight: 300;
+  position: absolute;
+  margin-top: -140px;
+  font-size: 1.8rem;
+  font-family: "Roboto Mono", monospace;
+}
+.front_style h2 {
+  transition: 300ms;
+  font-weight: 100;
+  position: absolute;
+  margin-top: -90px;
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.tag {
+  background-color: #22254b;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.tag.green {
+  color: green;
+}
+
+.tag.orange {
+  color: orange;
+}
+
+.tag.red {
+  color: rgba(238, 52, 52, 0.774);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px;
+}
+.pagination .MuiPaginationItem-outlined {
+  border-color: #4f5399;
+}
+.pagination .MuiPaginationItem-page.Mui-selected {
+  background-color: rgba(37, 106, 185, 0.774);
+}
+
+.pagination .MuiPaginationItem-root {
+  color: white;
+  margin: 0 5px;
+}
+
+.pagination .MuiPagination-ul {
+  align-items: unset;
+}
+
+@media only screen and (min-width: 836px) {
+  .img {
+    height: 500px;
+  }
+  .body {
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    transition: 300ms;
+  }
+
+  .body h1 {
+    font-size: 2.3rem;
+  }
+
+  .front_style h1 {
+    margin-top: -290px;
+    font-size: 2.8rem;
+  }
+  .front_style h2 {
+    margin-top: -220px;
+    margin-left: 300px;
+    font-size: 2rem;
+  }
+}
