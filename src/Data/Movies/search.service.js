@@ -13,7 +13,6 @@ export const useSerchMovie = () => {
             type: "FETCH_DATA",
             value: data.results,
           });
-          console.log(data.total_pages);
 
           movieDispatch({
             type: "TOTAL_RESULT",

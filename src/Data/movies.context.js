@@ -3,7 +3,7 @@ import produce from "immer";
 
 const initialState = {
   serchMovie: "",
-  currentMovies: null,
+  currentMovie: null,
   page: 1,
   total_pages: 0,
   loading: false,
@@ -33,7 +33,7 @@ const movieReducer = produce((draft, action) => {
       break;
     }
     case "SET_CURRENT_MOVIE": {
-      draft.currentMovies = action.value;
+      draft.currentMovie = action.value;
       break;
     }
     case "SET_LOADING": {

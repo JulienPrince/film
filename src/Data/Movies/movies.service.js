@@ -23,6 +23,5 @@ export const useMovie = () => {
         });
       });
   }, [FEATURED_API, movieDispatch]);
-  console.log(moviesState.films);
   return { moviesState, movieDispatch };
 };

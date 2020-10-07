@@ -27,8 +27,7 @@ function App() {
                 <Redirect from="/" to="/acceuil" exact></Redirect>
                 <Route path="/acceuil" component={Popular} />
                 <Route path="/theatres" component={Theatres} />
-                <Route path="/moviInfos" component={MovieInfo} />
-                {/* <Route path="/bestmovies" component={} /> */}
+                <Route path="/movieinfos" component={MovieInfo} />
               </Switch>
             </main>
           </React.Fragment>
