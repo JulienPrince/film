@@ -1,8 +1,7 @@
 import React from "react";
-import img from "../assets/theatre.jpg";
+import img from "../assets/best.jpg";
 import Movie from "../Movies/movie/Movie";
 import { KeyboardDatePicker } from "@material-ui/pickers";
-import { dateToString } from "../../utils/dateUtils";
 import Pagination from "@material-ui/lab/Pagination";
 import { LinearProgress } from "@material-ui/core";
 import { useBestFilm } from "../../Data/Movies/bestFilm.service";
@@ -24,7 +23,7 @@ const BestFilm = () => {
 
         <div className="body">
           <div className="title">
-            <h1>What movies is Best in?</h1>
+            <h1>What movies is Best in ?</h1>
           </div>
 
           <div className="date">
