@@ -10,12 +10,12 @@ const Navbar = () => {
   return (
     <>
       <header className="topbar">
-        <NavLink to="/acceuil" className="topbar_logo">
+        <NavLink to="/" className="topbar_logo">
           Refecence Movies
         </NavLink>
         <form
           className="form"
-          onSubmit={(e) => {
+          onChange={(e) => {
             e.preventDefault();
             submitSearch();
           }}
@@ -29,7 +29,6 @@ const Navbar = () => {
                 value: e.target.value,
               });
             }}
-            type="search"
             placeholder="Search ..."
           />
         </form>

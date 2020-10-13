@@ -1,5 +1,6 @@
 import * as React from "react";
 import produce from "immer";
+import { dateToString } from "../utils/dateUtils";
 
 const initialState = {
   serchMovie: "",
@@ -8,6 +9,9 @@ const initialState = {
   total_pages: 0,
   loading: false,
   films: [],
+  BestFilmAt: new Date(),
+  dateDebut: dateToString(new Date()),
+  dateFin: dateToString(new Date()),
   img:
     "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   api_key: process.env.REACT_APP_API,
@@ -38,6 +42,18 @@ const movieReducer = produce((draft, action) => {
     }
     case "SET_LOADING": {
       draft.loading = action.value;
+      break;
+    }
+    case "HANDLE_CHANGE_DATE_DEBUT": {
+      draft.dateDebut = action.value;
+      break;
+    }
+    case "HANDLE_CHANGE_DATE_FIN": {
+      draft.dateFin = action.value;
+      break;
+    }
+    case "HANDLE_CHANGE_DATE": {
+      draft.BestFilmAt = action.value;
       break;
     }
     default:

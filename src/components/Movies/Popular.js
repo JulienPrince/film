@@ -5,9 +5,11 @@ import Movie from "./movie/Movie";
 import { useMovie } from "../../Data/Movies/movies.service";
 import Pagination from "@material-ui/lab/Pagination";
 import { LinearProgress } from "@material-ui/core";
+import { useSerchMovie } from "../../Data/Movies/search.service";
 
 const Popular = () => {
   const { moviesState, movieDispatch } = useMovie();
+  const { submitSearch } = useSerchMovie();
   return (
     <div>
       <img src={img} alt="front" className="img" />
@@ -24,28 +26,26 @@ const Popular = () => {
         </h1>
       </div>
       <div className="movie-container">
-        {moviesState.films.length > 0
-          ? moviesState.films.map((movie) => (
-              <Movie key={movie.id} {...movie} img={moviesState.img} />
-            ))
-          : "a faire"}
+        {moviesState.films.length > 0 &&
+          moviesState.films.map((movie) => (
+            <Movie key={movie.id} {...movie} img={moviesState.img} />
+          ))}
       </div>
       <div className="pagination">
-        {moviesState.total_pages > 20 ? (
+        {moviesState.total_pages > 20 && (
           <Pagination
             page={moviesState.page}
             count={moviesState.total_pages}
             size="small"
             variant="outlined"
             onChange={(e, page) => {
+              submitSearch();
               movieDispatch({
                 type: "SET_PAGE",
                 value: page,
               });
             }}
           />
-        ) : (
-          ""
         )}
       </div>
     </div>

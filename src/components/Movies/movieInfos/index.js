@@ -3,11 +3,12 @@ import { Typography } from "@material-ui/core";
 import "./movieInfo.css";
 import { Link, Redirect } from "react-router-dom";
 import { useCurrentMovie } from "../../../Data/Movies/currentMovie.service";
+import { useVote } from "../../../Data/Movies/voteMovie.Service";
 const IMG_API = "http://image.tmdb.org/t/p/w1280";
 
 const MovieInfo = () => {
   const { moviesState } = useCurrentMovie();
-  console.log(moviesState.currentMovie);
+  const { setVoteClass } = useVote();
 
   return (
     <>
@@ -49,7 +50,11 @@ const MovieInfo = () => {
                 </div>
                 <div className="note_info">
                   <Typography variant="h5">Note :</Typography>
-                  <div className="note_infos_container">
+                  <div
+                    className={`note_infos_container tag ${setVoteClass(
+                      movie.vote_average
+                    )}`}
+                  >
                     <Typography>{movie.vote_average}</Typography>
                   </div>
                 </div>

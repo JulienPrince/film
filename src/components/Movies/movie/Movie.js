@@ -1,23 +1,13 @@
 import React from "react";
 import { useCurrentMovie } from "../../../Data/Movies/currentMovie.service";
 import "./Movie.css";
-import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useVote } from "../../../Data/Movies/voteMovie.Service";
 const IMG_API = "http://image.tmdb.org/t/p/w1280";
-
-const setVoteClass = (vote) => {
-  if (vote >= 8) {
-    return "green";
-  } else if (vote >= 6) {
-    return "orange";
-  } else {
-    return "red";
-  }
-};
 
 const Movie = ({ title, poster_path, overview, vote_average, img, id }) => {
   const { currentMovie } = useCurrentMovie();
+  const { setVoteClass } = useVote();
   return (
     <div className="movie">
       <img src={poster_path ? IMG_API + poster_path : img} alt={title} />

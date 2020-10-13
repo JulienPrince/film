@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useMovieDispatch, useMovieState } from "../movies.consumer";
 
-export const useMovie = () => {
+export const useIntheatreMovie = () => {
   const moviesState = useMovieState();
   const movieDispatch = useMovieDispatch();
-  const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${moviesState.api_key}&page=${moviesState.page}`;
+  const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=${moviesState.dateDebut}&primary_release_date.lte=${moviesState.dateFin}&api_key=${moviesState.api_key}&page=${moviesState.page}`;
+
   useEffect(() => {
     if (moviesState.serchMovie === "") {
       fetch(FEATURED_API)
@@ -33,5 +34,6 @@ export const useMovie = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [FEATURED_API]);
+
   return { moviesState, movieDispatch };
 };

@@ -1,0 +1,54 @@
+.date {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.date .MuiInputBase-root {
+  color: beige;
+}
+
+.date .MuiIconButton-root {
+  color: beige;
+}
+.date .MuiFormLabel-root {
+  color: beige;
+}
+
+.body {
+  padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn .MuiButton-root {
+  color: aliceblue;
+  border: 2px solid #43456f;
+  width: 150px;
+  border-radius: 5px;
+}
+.btn .MuiButton-label {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 420px) {
+  .date {
+    width: 450px;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .date .MuiInputBase-root {
+    max-width: 200px;
+  }
+  .btn {
+    justify-content: flex-start;
+  }
+  .btn .MuiButton-root {
+    margin-left: 10px;
+  }
+}

@@ -90,8 +90,8 @@
 
 .note_infos_container {
   background: #43456f;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -101,7 +101,6 @@
 .note_infos_container .MuiTypography-root {
   font-weight: bold;
   font-size: 16px;
-  color: #1b8201;
 }
 
 .font {
@@ -166,9 +165,6 @@
     z-index: 100;
   }
 
-  .note_infos_container .MuiTypography-root {
-    color: rgb(44, 184, 56);
-  }
   .note_infos_container {
     background: #2e3e7e;
   }
