@@ -21,9 +21,24 @@ const Popular = () => {
         {moviesState.loading === false && <LinearProgress />}
       </div>
       <div className="body">
-        <h1>
-          {moviesState.serchMovie ? "Resultat" : "The most popular movies"}
-        </h1>
+        <h1>The most popular movies</h1>
+      </div>
+      <div className="pagination">
+        {moviesState.total_pages > 20 && (
+          <Pagination
+            page={moviesState.page}
+            count={moviesState.total_pages}
+            size="small"
+            variant="outlined"
+            onChange={(e, page) => {
+              submitSearch();
+              movieDispatch({
+                type: "SET_PAGE",
+                value: page,
+              });
+            }}
+          />
+        )}
       </div>
       <div className="movie-container">
         {moviesState.films.length > 0 &&

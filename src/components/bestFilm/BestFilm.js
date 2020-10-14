@@ -49,6 +49,22 @@ const BestFilm = () => {
             />
           </div>
         </div>
+        <div className="pagination">
+          {moviesState.total_pages > 5 && (
+            <Pagination
+              page={moviesState.page}
+              count={moviesState.total_pages}
+              size="small"
+              variant="outlined"
+              onChange={(e, page) => {
+                movieDispatch({
+                  type: "SET_PAGE",
+                  value: page,
+                });
+              }}
+            />
+          )}
+        </div>
         <div className="movie-container">
           {moviesState.films.length > 0 &&
             moviesState.films.map((movie) => (
@@ -56,7 +72,7 @@ const BestFilm = () => {
             ))}
         </div>
         <div className="pagination">
-          {moviesState.total_pages > 20 && (
+          {moviesState.total_pages > 5 && (
             <Pagination
               page={moviesState.page}
               count={moviesState.total_pages}
