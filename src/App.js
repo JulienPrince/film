@@ -16,6 +16,7 @@ import Theatres from "./components/inTheatres/Theatres";
 import Popular from "./components/Movies/Popular";
 import MovieInfo from "./components/Movies/movieInfos";
 import BestFilm from "./components/bestFilm/BestFilm";
+import Footer from "./components/footer/Footer";
 
 const defaultMaterialTheme = createMuiTheme({
   palette: {
@@ -42,6 +43,7 @@ function App() {
                   <Route path="/bestmovies" component={BestFilm} />
                 </Switch>
               </main>
+              <Footer />
             </React.Fragment>
           </MuiPickersUtilsProvider>
         </ThemeProvider>
